@@ -1,246 +1,156 @@
-%%writefile index.css
-body {
-  margin: 0;
-  line-height: normal;
-}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, width=device-width">
+<title>Policy PDF Builder</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    background: #f3f5f9;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .page-title {
+    text-align: center;
+    color: #2952e3;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+  .page-subtitle {
+    text-align: center;
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+  .card {
+    background: #fff;
+    width: 440px;
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(20, 30, 60, 0.08);
+    padding: 24px;
+  }
+  .upload-box {
+    background: #eef2fb;
+    border-radius: 12px;
+    padding: 36px 20px;
+    text-align: center;
+  }
+  .upload-icon { font-size: 34px; margin-bottom: 10px; }
+  .upload-label {
+    font-size: 14px;
+    color: #33415c;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .file-name {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 10px;
+    min-height: 16px;
+  }
+  input[type=file] { display: none; }
+  .upload-btn, .generate-btn {
+    display: inline-block;
+    background: #2952e3;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 22px;
+    cursor: pointer;
+  }
+  .generate-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+  }
+  .generate-btn:disabled { opacity: 0.55; cursor: default; }
+  #status {
+    margin-top: 14px;
+    text-align: center;
+    font-size: 13px;
+    color: #6b7280;
+    min-height: 18px;
+  }
+  .spinner {
+    display: inline-block; width: 13px; height: 13px; margin-left: 6px;
+    border: 2px solid #cbd3e6; border-top-color: #2952e3; border-radius: 50%;
+    animation: spin 0.8s linear infinite; vertical-align: middle;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+<div>
+  <div class="page-title">Policy PDF Builder</div>
+  <div class="page-subtitle">فایل JSON را انتخاب کن و PDF گواهی بیمه‌نامه را بساز</div>
 
-.policy-main-page-above-54 {
-  width: 100%;
-  height: 842px;
-  position: relative;
-  background-color: #fff;
-  overflow: hidden;
-  text-align: right;
-  font-size: 12px;
-  color: #003575;
-  font-family: "Vazirmatn", sans-serif;
-  direction: rtl;
-}
-.header-parent {
-  position: absolute;
-  top: 24px;
-  left: 24px;
-  width: 547px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-}
-.header {
-  align-self: stretch;
-  border-radius: 12px;
-  background-color: #d4dcf0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 8px;
-  gap: 8px;
-  text-align: left;
-  font-size: 11px;
-  color: #252a3c;
-}
-.frame-parent {
-  align-self: stretch;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
+  <div class="card">
+    <div class="upload-box">
+      <div class="upload-icon">📄</div>
+      <div class="upload-label">فایل JSON خود را انتخاب کن</div>
+      <label class="upload-btn" for="jsonFile">Upload JSON File</label>
+      <input type="file" id="jsonFile" accept="application/json">
+      <div class="file-name" id="fileName"></div>
+    </div>
+    <button class="generate-btn" id="genBtn">Generate PDF</button>
+    <div id="status"></div>
+  </div>
+</div>
 
-/* ---- Logo placeholders (Snapp Bimeh + Saman Insurance) ---- */
-/* Static, fixed-size boxes. No border/dashed outline anymore. */
-.logo-placeholder {
-  width: 64px;
-  height: 46px;
-  position: relative;
-  flex-shrink: 0;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.logo-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
+<script>
+const fileInput = document.getElementById('jsonFile');
+const fileNameEl = document.getElementById('fileName');
+const btn = document.getElementById('genBtn');
+const statusEl = document.getElementById('status');
 
-.saman-logo-placeholder {
-  width: 68px;
-  height: 20px;
-  position: relative;
-  flex-shrink: 0;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.saman-logo-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
+fileInput.addEventListener('change', () => {
+  fileNameEl.textContent = fileInput.files.length ? fileInput.files[0].name : '';
+});
 
-.parent {
-  border-radius: 8px;
-  background-color: #f6f8fc;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 4px 8px;
-  gap: 8px;
-}
-.div {
-  position: relative;
-  line-height: 20px;
-  font-weight: 500;
-}
-.b {
-  position: relative;
-  font-size: 10px;
-  line-height: 20px;
-  color: #004691;
-  font-weight: 700;
-}
-.div2 {
-  align-self: stretch;
-  position: relative;
-  font-size: 10px;
-  line-height: 20px;
-  font-weight: 500;
-  text-align: justify;
-}
-.insurer-data {
-  align-self: stretch;
-  border-radius: 12px;
-  background-color: #d4dcf0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  padding: 8px;
-  gap: 8px;
-}
-.b2 {
-  align-self: stretch;
-  position: relative;
-  line-height: 20px;
-  font-weight: 700;
-}
-.frame-group {
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
-  text-align: left;
-  font-size: 11px;
-  color: #252a3c;
-}
-.frame-container {
-  align-self: stretch;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.group {
-  flex: 1;
-  border-radius: 8px;
-  background-color: #f6f8fc;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2px 8px;
-  gap: 20px;
-}
-.frame-wrapper {
-  align-self: stretch;
-  display: flex;
-  align-items: center;
-}
-.parent6 {
-  width: 356px;
-  border-radius: 8px;
-  background-color: #f6f8fc;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2px 8px;
-  box-sizing: border-box;
-  gap: 20px;
-}
-.apple-parent {
-  flex: 1;
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2px 8px;
-  gap: 20px;
-}
-.frame-parent7 {
-  align-self: stretch;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 8px;
-}
-.images-alt-1-inner {
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
-  font-size: 10px;
-  color: #004691;
-}
+btn.addEventListener('click', async () => {
+  if (!fileInput.files.length) {
+    statusEl.textContent = 'اول یک فایل JSON انتخاب کن';
+    return;
+  }
 
-/* ---- Device photo cards ---- */
-/* Card hugs its content (no stretching) so it wraps tightly around
-   the photo — this is what makes 1 or 2 photos look right instead
-   of stretching to fill the row. */
-.frame-parent10 {
-  flex: 0 0 auto;
-  border-radius: 8px;
-  background-color: #f6f8fc;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 2px 8px 8px;
-  gap: 4px;
-}
-.wrapper {
-  width: 155.7px;
-  display: flex;
-  align-items: center;
-  justify-content: right;
-}
-.b20 {
-  position: relative;
-  line-height: 20px;
-  font-weight: 700;
-}
-.photo-placeholder {
-  align-self: stretch;
-  height: 188.4px;
-  width: 155.7px;
-  position: relative;
-  max-width: 100%;
-  overflow: hidden;
-  flex-shrink: 0;
-  border-radius: 6px;
-  background-color: #eef2fa;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
-.photo-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
+  btn.disabled = true;
+  statusEl.innerHTML = 'در حال ساخت PDF <span class="spinner"></span>';
 
+  const formData = new FormData();
+  formData.append('file', fileInput.files[0]);
+
+  try {
+    const res = await fetch('/generate-pdf', { method: 'POST', body: formData });
+    if (!res.ok) {
+      const errText = await res.text();
+      throw new Error(errText || ('HTTP ' + res.status));
+    }
+    const blob = await res.blob();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'policy.pdf';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    statusEl.textContent = 'آماده شد، دانلود شروع شد ✅';
+  } catch (e) {
+    statusEl.textContent = 'خطا: ' + e.message;
+  } finally {
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
