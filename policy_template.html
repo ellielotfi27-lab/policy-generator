@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, width=device-width">
+  <title>گواهی بیمه‌نامه موبایل</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@500;700&display=swap" />
+
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+
+  <div class="policy-main-page-above-54">
+
+    <div class="header-parent">
+
+      <!-- ===== Top header: logos + serial + description ===== -->
+      <div class="header">
+        <div class="frame-parent">
+
+          {% if logos and logos.snapp_bimeh_url %}
+          <div class="logo-placeholder">
+            <img src="{{ logos.snapp_bimeh_url }}" alt="Snapp Bimeh logo">
+          </div>
+          {% endif %}
+
+          <div class="parent">
+            <div class="div">{{ serial_number or '-' }}</div>
+            <b class="b">سریال گواهی بیمه‌نامهٔ موبایل:</b>
+
+            {% if logos and logos.saman_insurance_url %}
+            <div class="saman-logo-placeholder">
+              <img src="{{ logos.saman_insurance_url }}" alt="Saman Insurance logo">
+            </div>
+            {% endif %}
+          </div>
+
+        </div>
+        <div class="div2">{{ description_text or '-' }}</div>
+      </div>
+
+      <!-- ===== Insurer (policyholder) info ===== -->
+      <div class="insurer-data">
+        <b class="b2">مشخصات بیمه‌گزار</b>
+        <div class="frame-group">
+          <div class="frame-container">
+            <div class="group">
+              <div class="div">{{ policyholder.last_name or '-' }}</div>
+              <b class="b">نام‌خانوادگی:</b>
+            </div>
+            <div class="group">
+              <div class="div">{{ policyholder.first_name or '-' }}</div>
+              <b class="b">نام:</b>
+            </div>
+          </div>
+          <div class="frame-container">
+            <div class="group">
+              <div class="div">{{ policyholder.mobile or '-' }}</div>
+              <b class="b">شمارهٔ موبایل:</b>
+            </div>
+            <div class="group">
+              <div class="div">{{ policyholder.father_name or '-' }}</div>
+              <b class="b">نام پدر:</b>
+            </div>
+          </div>
+          <div class="frame-container">
+            <div class="group">
+              <div class="div">{{ policyholder.birth_date or '-' }}</div>
+              <b class="b">تاریخ تولد:</b>
+            </div>
+            <div class="group">
+              <div class="div">{{ policyholder.national_code or '-' }}</div>
+              <b class="b">کدملی:</b>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Policy details ===== -->
+      <div class="insurer-data">
+        <b class="b2">مشخصات بیمه‌نامه</b>
+        <div class="frame-group">
+          <div class="frame-wrapper">
+            <div class="group">
+              <div class="div">{{ policy.certificate_code or '-' }}</div>
+              <b class="b">کد گواهی بیمه‌نامه:</b>
+            </div>
+          </div>
+          <div class="frame-container">
+            <div class="parent6">
+              <div class="div">{{ policy.plan_name or '-' }}</div>
+              <b class="b">نام طرح:</b>
+            </div>
+            <div class="group">
+              <div class="div">{{ policy.category or '-' }}</div>
+              <b class="b">گروه کالا:</b>
+            </div>
+          </div>
+          <div class="frame-container">
+            <div class="group">
+              <div class="div">{{ policy.model or '-' }}</div>
+              <b class="b">مدل:</b>
+            </div>
+            <div class="apple-parent">
+              <div class="div">{{ policy.brand or '-' }}</div>
+              <b class="b">برند:</b>
+            </div>
+          </div>
+          <div class="frame-container">
+            <div class="group">
+              <div class="div">{{ policy.imei_2 or '-' }}</div>
+              <b class="b">:2 IMEI</b>
+            </div>
+            <div class="group">
+              <div class="div">{{ policy.imei_1 or '-' }}</div>
+              <b class="b">:1 IMEI</b>
+            </div>
+          </div>
+          <div class="frame-parent7">
+            <div class="group">
+              <div class="div">{{ policy.price_rial | format_price }}</div>
+              <b class="b">قیمت کالا:</b>
+            </div>
+            <div class="group">
+              <div class="div">{{ policy.condition or '-' }}</div>
+              <b class="b">وضعیت کالا:</b>
+            </div>
+          </div>
+          <div class="frame-parent7">
+            <div class="group">
+              <div class="div">{{ policy.start_date or '-' }}</div>
+              <b class="b">تاریخ شروع بیمه:</b>
+            </div>
+            <div class="group">
+              <div class="div">{{ policy.end_date or '-' }}</div>
+              <b class="b">تاریخ پایان بیمه:</b>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Device photos (1 to 3 items, right-to-left, fixed size) ===== -->
+      {% if images and images|length > 0 %}
+      <div class="insurer-data">
+        <b class="b2">تصاویر دستگاه</b>
+        <div class="images-alt-1-inner">
+          <div class="frame-container">
+            {% for image in images %}
+            <div class="frame-parent10">
+              {% if image.label %}
+              <div class="wrapper">
+                <b class="b20">{{ image.label }}:</b>
+              </div>
+              {% endif %}
+              <div class="photo-placeholder">
+                <img src="{{ image.url }}" alt="{{ image.label or 'device photo' }}">
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+
+</body>
+</html>
