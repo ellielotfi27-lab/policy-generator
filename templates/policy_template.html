@@ -1,4 +1,86 @@
-<!-- ===== Policy details ===== -->
+%%writefile policy_template.html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, width=device-width">
+  <title>گواهی بیمه‌نامه موبایل</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@500;700&display=swap" />
+
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+
+  <div class="policy-main-page-above-54">
+
+    <div class="header-parent">
+
+      <!-- ===== Top header ===== -->
+      <!-- Right to left: Saman logo + serial number, then (far left) Snapp Bimeh logo -->
+      <div class="header">
+        <div class="frame-parent">
+
+          <div class="parent">
+            {% if logos and logos.saman_insurance_url %}
+            <div class="saman-logo-placeholder">
+              <img src="{{ logos.saman_insurance_url }}" alt="Saman Insurance logo">
+            </div>
+            {% endif %}
+            <b class="b">سریال گواهی بیمه‌نامهٔ موبایل:</b>
+            <div class="div">{{ serial_number or '-' }}</div>
+          </div>
+
+          {% if logos and logos.snapp_bimeh_url %}
+          <div class="logo-placeholder">
+            <img src="{{ logos.snapp_bimeh_url }}" alt="Snapp Bimeh logo">
+          </div>
+          {% endif %}
+
+        </div>
+        <div class="div2">{{ description_text or '-' }}</div>
+      </div>
+      
+<!-- ===== Insurer (policyholder) info ===== -->
+      <div class="insurer-data">
+        <b class="b2">مشخصات بیمه‌گزار</b>
+        <div class="frame-group">
+          <div class="frame-container">
+            <div class="group">
+              <b class="b">نام:</b>
+              <div class="div">{{ policyholder.first_name or '-' }}</div>
+            </div>
+            <div class="group">
+              <b class="b">نام‌خانوادگی:</b>
+              <div class="div">{{ policyholder.last_name or '-' }}</div>
+            </div>
+          </div>
+          <div class="frame-container">
+            <div class="group">
+              <b class="b">نام پدر:</b>
+              <div class="div">{{ policyholder.father_name or '-' }}</div>
+            </div>
+            <div class="group">
+              <b class="b">شمارهٔ موبایل:</b>
+              <div class="div">{{ policyholder.mobile or '-' }}</div>
+            </div>
+          </div>
+          <div class="frame-container">
+            <div class="group">
+              <b class="b">کدملی:</b>
+              <div class="div">{{ policyholder.national_code or '-' }}</div>
+            </div>
+            <div class="group">
+              <b class="b">تاریخ تولد:</b>
+              <div class="div">{{ policyholder.birth_date or '-' }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Policy details ===== -->
       <div class="insurer-data">
         <b class="b2">مشخصات بیمه‌نامه</b>
         <div class="frame-group">
