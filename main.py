@@ -39,35 +39,119 @@ UPLOAD_PAGE = """<!DOCTYPE html>
 <meta name="viewport" content="initial-scale=1, width=device-width">
 <title>Policy PDF Builder</title>
 <style>
-  body { font-family: sans-serif; max-width: 460px; margin: 70px auto; text-align: center; color:#222; }
-  h2 { margin-bottom: 24px; }
-  input[type=file] { margin-bottom: 16px; }
-  button {
-    padding: 10px 28px; font-size: 15px; cursor: pointer;
-    background:#003575; color:#fff; border:none; border-radius:8px;
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    background: #f3f5f9;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
   }
-  button:disabled { opacity:0.6; cursor:default; }
-  #status { margin-top: 18px; color:#555; min-height: 20px; }
+  .page-title {
+    text-align: center;
+    color: #2952e3;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+  .page-subtitle {
+    text-align: center;
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+  .card {
+    background: #fff;
+    width: 440px;
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(20, 30, 60, 0.08);
+    padding: 24px;
+  }
+  .upload-box {
+    background: #eef2fb;
+    border-radius: 12px;
+    padding: 36px 20px;
+    text-align: center;
+  }
+  .upload-icon { font-size: 34px; margin-bottom: 10px; }
+  .upload-label {
+    font-size: 14px;
+    color: #33415c;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .file-name {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 10px;
+    min-height: 16px;
+  }
+  input[type=file] { display: none; }
+  .upload-btn, .generate-btn {
+    display: inline-block;
+    background: #2952e3;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 22px;
+    cursor: pointer;
+  }
+  .generate-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+  }
+  .generate-btn:disabled { opacity: 0.55; cursor: default; }
+  #status {
+    margin-top: 14px;
+    text-align: center;
+    font-size: 13px;
+    color: #6b7280;
+    min-height: 18px;
+  }
   .spinner {
-    display:inline-block; width:14px; height:14px; margin-left:8px;
-    border:2px solid #ccc; border-top-color:#003575; border-radius:50%;
-    animation: spin 0.8s linear infinite; vertical-align:middle;
+    display: inline-block; width: 13px; height: 13px; margin-left: 6px;
+    border: 2px solid #cbd3e6; border-top-color: #2952e3; border-radius: 50%;
+    animation: spin 0.8s linear infinite; vertical-align: middle;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
 </style>
 </head>
 <body>
-  <h2>ساخت PDF گواهی بیمه‌نامه</h2>
-  <input type="file" id="jsonFile" accept="application/json"><br>
-  <button id="genBtn">Generate PDF</button>
-  <div id="status"></div>
+<div>
+  <div class="page-title">Policy PDF Builder</div>
+  <div class="page-subtitle">فایل JSON را انتخاب کن و PDF گواهی بیمه‌نامه را بساز</div>
+
+  <div class="card">
+    <div class="upload-box">
+      <div class="upload-icon">📄</div>
+      <div class="upload-label">فایل JSON خود را انتخاب کن</div>
+      <label class="upload-btn" for="jsonFile">Upload JSON File</label>
+      <input type="file" id="jsonFile" accept="application/json">
+      <div class="file-name" id="fileName"></div>
+    </div>
+    <button class="generate-btn" id="genBtn">Generate PDF</button>
+    <div id="status"></div>
+  </div>
+</div>
 
 <script>
+const fileInput = document.getElementById('jsonFile');
+const fileNameEl = document.getElementById('fileName');
 const btn = document.getElementById('genBtn');
 const statusEl = document.getElementById('status');
 
+fileInput.addEventListener('change', () => {
+  fileNameEl.textContent = fileInput.files.length ? fileInput.files[0].name : '';
+});
+
 btn.addEventListener('click', async () => {
-  const fileInput = document.getElementById('jsonFile');
   if (!fileInput.files.length) {
     statusEl.textContent = 'اول یک فایل JSON انتخاب کن';
     return;
