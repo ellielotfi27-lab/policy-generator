@@ -1,156 +1,91 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="initial-scale=1, width=device-width">
-<title>Policy PDF Builder</title>
-<style>
-  * { box-sizing: border-box; }
-  body {
-    font-family: 'Vazirmatn', Tahoma, sans-serif;
-    background: #f3f5f9;
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-  }
-  .page-title {
-    text-align: center;
-    color: #2952e3;
-    font-size: 30px;
-    font-weight: 800;
-    margin-bottom: 6px;
-  }
-  .page-subtitle {
-    text-align: center;
-    color: #6b7280;
-    font-size: 14px;
-    margin-bottom: 32px;
-  }
-  .card {
-    background: #fff;
-    width: 440px;
-    max-width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(20, 30, 60, 0.08);
-    padding: 24px;
-  }
-  .upload-box {
-    background: #eef2fb;
-    border-radius: 12px;
-    padding: 36px 20px;
-    text-align: center;
-  }
-  .upload-icon { font-size: 34px; margin-bottom: 10px; }
-  .upload-label {
-    font-size: 14px;
-    color: #33415c;
-    font-weight: 600;
-    margin-bottom: 16px;
-  }
-  .file-name {
-    font-size: 12px;
-    color: #6b7280;
-    margin-top: 10px;
-    min-height: 16px;
-  }
-  input[type=file] { display: none; }
-  .upload-btn, .generate-btn {
-    display: inline-block;
-    background: #2952e3;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 22px;
-    cursor: pointer;
-  }
-  .generate-btn {
-    width: 100%;
-    margin-top: 20px;
-    padding: 12px;
-  }
-  .generate-btn:disabled { opacity: 0.55; cursor: default; }
-  #status {
-    margin-top: 14px;
-    text-align: center;
-    font-size: 13px;
-    color: #6b7280;
-    min-height: 18px;
-  }
-  .spinner {
-    display: inline-block; width: 13px; height: 13px; margin-left: 6px;
-    border: 2px solid #cbd3e6; border-top-color: #2952e3; border-radius: 50%;
-    animation: spin 0.8s linear infinite; vertical-align: middle;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-</style>
-</head>
-<body>
-<div>
-  <div class="page-title">Policy PDF Builder</div>
-  <div class="page-subtitle">فایل JSON را انتخاب کن و PDF گواهی بیمه‌نامه را بساز</div>
+<!-- ===== Policy details ===== -->
+      <div class="insurer-data">
+        <b class="b2">مشخصات بیمه‌نامه</b>
+        <div class="frame-group">
+          <div class="frame-wrapper">
+            <div class="group">
+              <b class="b">کد گواهی بیمه‌نامه:</b>
+              <div class="div">{{ policy.certificate_code or '-' }}</div>
+            </div>
+          </div>
+          <div class="frame-container">
+            <div class="group">
+              <b class="b">گروه کالا:</b>
+              <div class="div">{{ policy.category or '-' }}</div>
+            </div>
+            <div class="parent6">
+              <b class="b">نام طرح:</b>
+              <div class="div">{{ policy.plan_name or '-' }}</div>
+            </div>
+          </div>
+          <div class="frame-container">
+            <div class="apple-parent">
+              <b class="b">برند:</b>
+              <div class="div">{{ policy.brand or '-' }}</div>
+            </div>
+            <div class="group">
+              <b class="b">مدل:</b>
+              <div class="div">{{ policy.model or '-' }}</div>
+            </div>
+          </div>
+          <div class="frame-container">
+            <div class="group">
+              <b class="b">:1 IMEI</b>
+              <div class="div">{{ policy.imei_1 or '-' }}</div>
+            </div>
+            <div class="group">
+              <b class="b">:2 IMEI</b>
+              <div class="div">{{ policy.imei_2 or '-' }}</div>
+            </div>
+          </div>
+          <div class="frame-parent7">
+            <div class="group">
+              <b class="b">وضعیت کالا:</b>
+              <div class="div">{{ policy.condition or '-' }}</div>
+            </div>
+            <div class="group">
+              <b class="b">قیمت کالا:</b>
+              <div class="div">{{ policy.price_rial | format_price }}</div>
+            </div>
+          </div>
+          <div class="frame-parent7">
+            <div class="group">
+              <b class="b">تاریخ شروع بیمه:</b>
+              <div class="div">{{ policy.start_date or '-' }}</div>
+            </div>
+            <div class="group">
+              <b class="b">تاریخ پایان بیمه:</b>
+              <div class="div">{{ policy.end_date or '-' }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <div class="card">
-    <div class="upload-box">
-      <div class="upload-icon">📄</div>
-      <div class="upload-label">فایل JSON خود را انتخاب کن</div>
-      <label class="upload-btn" for="jsonFile">Upload JSON File</label>
-      <input type="file" id="jsonFile" accept="application/json">
-      <div class="file-name" id="fileName"></div>
+      <!-- ===== Device photos (order comes from the "images" array in your JSON) ===== -->
+      {% if images and images|length > 0 %}
+      <div class="insurer-data">
+        <b class="b2">تصاویر دستگاه</b>
+        <div class="images-alt-1-inner">
+          <div class="frame-container">
+            {% for image in images %}
+            <div class="frame-parent10">
+              {% if image.label %}
+              <div class="wrapper">
+                <b class="b20">{{ image.label }}:</b>
+              </div>
+              {% endif %}
+              <div class="photo-placeholder">
+                <img src="{{ image.url }}" alt="{{ image.label or 'device photo' }}">
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
     </div>
-    <button class="generate-btn" id="genBtn">Generate PDF</button>
-    <div id="status"></div>
   </div>
-</div>
 
-<script>
-const fileInput = document.getElementById('jsonFile');
-const fileNameEl = document.getElementById('fileName');
-const btn = document.getElementById('genBtn');
-const statusEl = document.getElementById('status');
-
-fileInput.addEventListener('change', () => {
-  fileNameEl.textContent = fileInput.files.length ? fileInput.files[0].name : '';
-});
-
-btn.addEventListener('click', async () => {
-  if (!fileInput.files.length) {
-    statusEl.textContent = 'اول یک فایل JSON انتخاب کن';
-    return;
-  }
-
-  btn.disabled = true;
-  statusEl.innerHTML = 'در حال ساخت PDF <span class="spinner"></span>';
-
-  const formData = new FormData();
-  formData.append('file', fileInput.files[0]);
-
-  try {
-    const res = await fetch('/generate-pdf', { method: 'POST', body: formData });
-    if (!res.ok) {
-      const errText = await res.text();
-      throw new Error(errText || ('HTTP ' + res.status));
-    }
-    const blob = await res.blob();
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'policy.pdf';
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
-    statusEl.textContent = 'آماده شد، دانلود شروع شد ✅';
-  } catch (e) {
-    statusEl.textContent = 'خطا: ' + e.message;
-  } finally {
-    btn.disabled = false;
-  }
-});
-</script>
 </body>
 </html>
