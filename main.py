@@ -228,6 +228,7 @@ async def generate_pdf(file: UploadFile = File(...)):
                 height="842px",
                 print_background=True,
                 margin={"top": "0px", "bottom": "0px", "left": "0px", "right": "0px"},
+                page_ranges="1",
             )
             await browser.close()
     finally:
