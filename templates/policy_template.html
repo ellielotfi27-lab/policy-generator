@@ -1,172 +1,246 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1, width=device-width">
-  <title>گواهی بیمه‌نامه موبایل</title>
+%%writefile index.css
+body {
+  margin: 0;
+  line-height: normal;
+}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@500;700&display=swap" />
+.policy-main-page-above-54 {
+  width: 100%;
+  height: 842px;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  text-align: right;
+  font-size: 12px;
+  color: #003575;
+  font-family: "Vazirmatn", sans-serif;
+  direction: rtl;
+}
+.header-parent {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: 547px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.header {
+  align-self: stretch;
+  border-radius: 12px;
+  background-color: #d4dcf0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 8px;
+  gap: 8px;
+  text-align: left;
+  font-size: 11px;
+  color: #252a3c;
+}
+.frame-parent {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
 
-  <link rel="stylesheet" href="./index.css" />
-</head>
-<body>
+/* ---- Logo placeholders (Snapp Bimeh + Saman Insurance) ---- */
+/* Static, fixed-size boxes. No border/dashed outline anymore. */
+.logo-placeholder {
+  width: 64px;
+  height: 46px;
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.logo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
-  <div class="policy-main-page-above-54">
+.saman-logo-placeholder {
+  width: 68px;
+  height: 20px;
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.saman-logo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
-    <div class="header-parent">
+.parent {
+  border-radius: 8px;
+  background-color: #f6f8fc;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 4px 8px;
+  gap: 8px;
+}
+.div {
+  position: relative;
+  line-height: 20px;
+  font-weight: 500;
+}
+.b {
+  position: relative;
+  font-size: 10px;
+  line-height: 20px;
+  color: #004691;
+  font-weight: 700;
+}
+.div2 {
+  align-self: stretch;
+  position: relative;
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 500;
+  text-align: justify;
+}
+.insurer-data {
+  align-self: stretch;
+  border-radius: 12px;
+  background-color: #d4dcf0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 8px;
+  gap: 8px;
+}
+.b2 {
+  align-self: stretch;
+  position: relative;
+  line-height: 20px;
+  font-weight: 700;
+}
+.frame-group {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  text-align: left;
+  font-size: 11px;
+  color: #252a3c;
+}
+.frame-container {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.group {
+  flex: 1;
+  border-radius: 8px;
+  background-color: #f6f8fc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 8px;
+  gap: 20px;
+}
+.frame-wrapper {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.parent6 {
+  width: 356px;
+  border-radius: 8px;
+  background-color: #f6f8fc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 8px;
+  box-sizing: border-box;
+  gap: 20px;
+}
+.apple-parent {
+  flex: 1;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 8px;
+  gap: 20px;
+}
+.frame-parent7 {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.images-alt-1-inner {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  font-size: 10px;
+  color: #004691;
+}
 
-      <!-- ===== Top header: logos + serial + description ===== -->
-      <div class="header">
-        <div class="frame-parent">
+/* ---- Device photo cards ---- */
+/* Card hugs its content (no stretching) so it wraps tightly around
+   the photo — this is what makes 1 or 2 photos look right instead
+   of stretching to fill the row. */
+.frame-parent10 {
+  flex: 0 0 auto;
+  border-radius: 8px;
+  background-color: #f6f8fc;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2px 8px 8px;
+  gap: 4px;
+}
+.wrapper {
+  width: 155.7px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+.b20 {
+  position: relative;
+  line-height: 20px;
+  font-weight: 700;
+}
+.photo-placeholder {
+  align-self: stretch;
+  height: 188.4px;
+  width: 155.7px;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background-color: #eef2fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
-          {% if logos and logos.snapp_bimeh_url %}
-          <div class="logo-placeholder">
-            <img src="{{ logos.snapp_bimeh_url }}" alt="Snapp Bimeh logo">
-          </div>
-          {% endif %}
-
-          <div class="parent">
-            <div class="div">{{ serial_number or '-' }}</div>
-            <b class="b">سریال گواهی بیمه‌نامهٔ موبایل:</b>
-
-            {% if logos and logos.saman_insurance_url %}
-            <div class="saman-logo-placeholder">
-              <img src="{{ logos.saman_insurance_url }}" alt="Saman Insurance logo">
-            </div>
-            {% endif %}
-          </div>
-
-        </div>
-        <div class="div2">{{ description_text or '-' }}</div>
-      </div>
-
-      <!-- ===== Insurer (policyholder) info ===== -->
-      <div class="insurer-data">
-        <b class="b2">مشخصات بیمه‌گزار</b>
-        <div class="frame-group">
-          <div class="frame-container">
-            <div class="group">
-              <div class="div">{{ policyholder.last_name or '-' }}</div>
-              <b class="b">نام‌خانوادگی:</b>
-            </div>
-            <div class="group">
-              <div class="div">{{ policyholder.first_name or '-' }}</div>
-              <b class="b">نام:</b>
-            </div>
-          </div>
-          <div class="frame-container">
-            <div class="group">
-              <div class="div">{{ policyholder.mobile or '-' }}</div>
-              <b class="b">شمارهٔ موبایل:</b>
-            </div>
-            <div class="group">
-              <div class="div">{{ policyholder.father_name or '-' }}</div>
-              <b class="b">نام پدر:</b>
-            </div>
-          </div>
-          <div class="frame-container">
-            <div class="group">
-              <div class="div">{{ policyholder.birth_date or '-' }}</div>
-              <b class="b">تاریخ تولد:</b>
-            </div>
-            <div class="group">
-              <div class="div">{{ policyholder.national_code or '-' }}</div>
-              <b class="b">کدملی:</b>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== Policy details ===== -->
-      <div class="insurer-data">
-        <b class="b2">مشخصات بیمه‌نامه</b>
-        <div class="frame-group">
-          <div class="frame-wrapper">
-            <div class="group">
-              <div class="div">{{ policy.certificate_code or '-' }}</div>
-              <b class="b">کد گواهی بیمه‌نامه:</b>
-            </div>
-          </div>
-          <div class="frame-container">
-            <div class="parent6">
-              <div class="div">{{ policy.plan_name or '-' }}</div>
-              <b class="b">نام طرح:</b>
-            </div>
-            <div class="group">
-              <div class="div">{{ policy.category or '-' }}</div>
-              <b class="b">گروه کالا:</b>
-            </div>
-          </div>
-          <div class="frame-container">
-            <div class="group">
-              <div class="div">{{ policy.model or '-' }}</div>
-              <b class="b">مدل:</b>
-            </div>
-            <div class="apple-parent">
-              <div class="div">{{ policy.brand or '-' }}</div>
-              <b class="b">برند:</b>
-            </div>
-          </div>
-          <div class="frame-container">
-            <div class="group">
-              <div class="div">{{ policy.imei_2 or '-' }}</div>
-              <b class="b">:2 IMEI</b>
-            </div>
-            <div class="group">
-              <div class="div">{{ policy.imei_1 or '-' }}</div>
-              <b class="b">:1 IMEI</b>
-            </div>
-          </div>
-          <div class="frame-parent7">
-            <div class="group">
-              <div class="div">{{ policy.price_rial | format_price }}</div>
-              <b class="b">قیمت کالا:</b>
-            </div>
-            <div class="group">
-              <div class="div">{{ policy.condition or '-' }}</div>
-              <b class="b">وضعیت کالا:</b>
-            </div>
-          </div>
-          <div class="frame-parent7">
-            <div class="group">
-              <div class="div">{{ policy.start_date or '-' }}</div>
-              <b class="b">تاریخ شروع بیمه:</b>
-            </div>
-            <div class="group">
-              <div class="div">{{ policy.end_date or '-' }}</div>
-              <b class="b">تاریخ پایان بیمه:</b>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== Device photos (1 to 3 items, right-to-left, fixed size) ===== -->
-      {% if images and images|length > 0 %}
-      <div class="insurer-data">
-        <b class="b2">تصاویر دستگاه</b>
-        <div class="images-alt-1-inner">
-          <div class="frame-container">
-            {% for image in images %}
-            <div class="frame-parent10">
-              {% if image.label %}
-              <div class="wrapper">
-                <b class="b20">{{ image.label }}:</b>
-              </div>
-              {% endif %}
-              <div class="photo-placeholder">
-                <img src="{{ image.url }}" alt="{{ image.label or 'device photo' }}">
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-      {% endif %}
-
-    </div>
-  </div>
-
-</body>
-</html>
