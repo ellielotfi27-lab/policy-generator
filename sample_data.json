@@ -1,0 +1,39 @@
+{
+  "serial_number": "۰۵۰۲۰۰۲۷۴۸۴۸۸۶",
+  "description_text": "این بیمه‌نامه طبق پیشنهاد بیمه‌گزار و براساس قانون و مقررات بیمه در کشور و شرایط عمومی و خصوصی مندرج در متن قرارداد و پیوست آن و همچنین در ازای دریافت حق بیمه مقرر صادر گردید.",
+  "logos": {
+    "snapp_bimeh_url": "https://example.com/logos/snapp-bimeh.png",
+    "saman_insurance_url": "https://example.com/logos/saman-insurance.png"
+  },
+  "policyholder": {
+    "first_name": "حسن",
+    "last_name": "حسن‌زاده",
+    "father_name": "",
+    "mobile": "09333333333",
+    "birth_date": "۱۳۳۳/۰۳/۲۳",
+    "national_code": "3334444333"
+  },
+  "policy": {
+    "certificate_code": "P-1405/15125-70491/405/7484886",
+    "plan_name": "بیمهٔ سرقت، خرابی موبایل و صفحهٔ نمایش",
+    "category": "موبایل",
+    "model": "iPhone 13 (A2634)",
+    "brand": "Apple",
+    "imei_1": "۳۵۷۲۹۰۴۰۴۴۷۰۴۵۸",
+    "imei_2": "۳۵۷۲۹۰۴۰۴۴۷۰۴۵۶",
+    "price_rial": 333333333333,
+    "condition": "کارکرده",
+    "start_date": "۱۴۰۵/۰۷/۱۳",
+    "end_date": "۱۴۰۶/۰۷/۱۳"
+  },
+  "images": [
+    {
+      "label": "تصویر از پشت دستگاه",
+      "url": "https://example.com/photos/device-back.jpg"
+    },
+    {
+      "label": "تصویر IMEI",
+      "url": "https://example.com/photos/device-imei.jpg"
+    }
+  ]
+}
