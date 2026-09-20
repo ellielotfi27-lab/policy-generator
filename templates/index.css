@@ -1,269 +1,318 @@
-body {
-  margin: 0;
-  line-height: normal;
-}
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue255;\red255\green255\blue255;\red0\green0\blue0;
+\red107\green0\blue1;\red251\green0\blue7;\red19\green118\blue70;\red9\green60\blue148;\red144\green1\blue18;
+\red15\green112\blue1;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c100000;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;
+\cssrgb\c50196\c0\c0;\cssrgb\c100000\c0\c0;\cssrgb\c3529\c52549\c34510;\cssrgb\c1569\c31765\c64706;\cssrgb\c63922\c8235\c8235;
+\cssrgb\c0\c50196\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww29200\viewh15720\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
 
-.policy-main-page-above-54 {
-  width: 100%;
-  height: 842px;
-  position: relative;
-  background-color: #fff;
-  overflow: hidden;
-  text-align: right;
-  font-size: 12px;
-  color: #003575;
-  font-family: "Vazirmatn", sans-serif;
-  direction: rtl;
-}
-.header-parent {
-  position: absolute;
-  top: 24px;
-  left: 24px;
-  width: 547px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-}
-.header {
-  align-self: stretch;
-  border-radius: 12px;
-  background-color: #d4dcf0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 8px;
-  gap: 8px;
-  text-align: left;
-  font-size: 11px;
-  color: #252a3c;
-}
-.frame-parent {
-  align-self: stretch;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-/* ---- Logo placeholders (Snapp Bimeh + Saman Insurance) ---- */
-/* Static, fixed-size boxes. If the real logo src is missing/broken,
-   the whole placeholder box disappears (via onerror on the <img>). */
-.logo-placeholder {
-  width: 64px;
-  height: 46px;
-  position: relative;
-  flex-shrink: 0;
-  border-radius: 6px;
-  background-color: #eef2fa;
-  border: 1px dashed #aebbd9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.logo-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.logo-placeholder .placeholder-label {
-  font-size: 8px;
-  color: #6b7aa1;
-  text-align: center;
-  padding: 2px;
-  font-family: "Vazirmatn", sans-serif;
-}
-
-.saman-logo-placeholder {
-  width: 68px;
-  height: 20px;
-  position: relative;
-  flex-shrink: 0;
-  border-radius: 4px;
-  background-color: #eef2fa;
-  border: 1px dashed #aebbd9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.saman-logo-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.saman-logo-placeholder .placeholder-label {
-  font-size: 7px;
-  color: #6b7aa1;
-  text-align: center;
-  font-family: "Vazirmatn", sans-serif;
-}
-
-.parent {
-  border-radius: 8px;
-  background-color: #f6f8fc;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 4px 8px;
-  gap: 8px;
-}
-.div {
-  position: relative;
-  line-height: 20px;
-  font-weight: 500;
-}
-.b {
-  position: relative;
-  font-size: 10px;
-  line-height: 20px;
-  color: #004691;
-  font-weight: 700;
-}
-.div2 {
-  align-self: stretch;
-  position: relative;
-  font-size: 10px;
-  line-height: 20px;
-  font-weight: 500;
-  text-align: justify;
-}
-.insurer-data {
-  align-self: stretch;
-  border-radius: 12px;
-  background-color: #d4dcf0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  padding: 8px;
-  gap: 8px;
-}
-.b2 {
-  align-self: stretch;
-  position: relative;
-  line-height: 20px;
-  font-weight: 700;
-}
-.frame-group {
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
-  text-align: left;
-  font-size: 11px;
-  color: #252a3c;
-}
-.frame-container {
-  align-self: stretch;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.group {
-  flex: 1;
-  border-radius: 8px;
-  background-color: #f6f8fc;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2px 8px;
-  gap: 20px;
-}
-.frame-wrapper {
-  align-self: stretch;
-  display: flex;
-  align-items: center;
-}
-.parent6 {
-  width: 356px;
-  border-radius: 8px;
-  background-color: #f6f8fc;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2px 8px;
-  box-sizing: border-box;
-  gap: 20px;
-}
-.apple-parent {
-  flex: 1;
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2px 8px;
-  gap: 20px;
-}
-.frame-parent7 {
-  align-self: stretch;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 8px;
-}
-.images-alt-1-inner {
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  text-align: left;
-  font-size: 10px;
-  color: #004691;
-}
-
-/* ---- Device photo placeholders ---- */
-/* Static-size boxes (156px x 188.4px). If the real photo src is
-   missing/broken, the whole placeholder card disappears. */
-.frame-parent10 {
-  flex: 1;
-  border-radius: 8px;
-  background-color: #f6f8fc;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 2px 8px 8px;
-  gap: 4px;
-}
-.wrapper {
-  width: 155.7px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-.b20 {
-  position: relative;
-  line-height: 20px;
-  font-weight: 700;
-}
-.photo-placeholder {
-  align-self: stretch;
-  height: 188.4px;
-  width: 155.7px;
-  position: relative;
-  max-width: 100%;
-  overflow: hidden;
-  flex-shrink: 0;
-  border-radius: 6px;
-  background-color: #eef2fa;
-  border: 1px dashed #aebbd9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
-.photo-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.photo-placeholder .placeholder-label {
-  font-size: 10px;
-  color: #6b7aa1;
-  text-align: center;
-  padding: 8px;
-  font-family: "Vazirmatn", sans-serif;
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 %%writefile index.css\cf0 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 body\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 margin:\cf0 \strokec4  \cf7 \strokec7 0\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 line-height:\cf0 \strokec4  \cf8 \strokec8 normal\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .policy-main-page-above-54\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 width:\cf0 \strokec4  \cf7 \strokec7 100%\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 height:\cf0 \strokec4  \cf7 \strokec7 842px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 position:\cf0 \strokec4  \cf8 \strokec8 relative\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 background-color:\cf0 \strokec4  \cf8 \strokec8 #fff\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 overflow:\cf0 \strokec4  \cf8 \strokec8 hidden\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 text-align:\cf0 \strokec4  \cf8 \strokec8 right\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 font-size:\cf0 \strokec4  \cf7 \strokec7 12px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 color:\cf0 \strokec4  \cf8 \strokec8 #003575\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 font-family:\cf0 \strokec4  \cf9 \strokec9 "Vazirmatn"\cf0 \strokec4 , \cf8 \strokec8 sans-serif\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 direction:\cf0 \strokec4  \cf8 \strokec8 rtl\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .header-parent\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 position:\cf0 \strokec4  \cf8 \strokec8 absolute\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 top:\cf0 \strokec4  \cf7 \strokec7 24px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 left:\cf0 \strokec4  \cf7 \strokec7 24px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 width:\cf0 \strokec4  \cf7 \strokec7 547px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 display:\cf0 \strokec4  \cf8 \strokec8 flex\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 flex-direction:\cf0 \strokec4  \cf8 \strokec8 column\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 align-items:\cf0 \strokec4  \cf8 \strokec8 flex-start\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 gap:\cf0 \strokec4  \cf7 \strokec7 16px\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .header\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 align-self:\cf0 \strokec4  \cf8 \strokec8 stretch\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 border-radius:\cf0 \strokec4  \cf7 \strokec7 12px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 background-color:\cf0 \strokec4  \cf8 \strokec8 #d4dcf0\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 display:\cf0 \strokec4  \cf8 \strokec8 flex\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 flex-direction:\cf0 \strokec4  \cf8 \strokec8 column\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 align-items:\cf0 \strokec4  \cf8 \strokec8 flex-end\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 justify-content:\cf0 \strokec4  \cf8 \strokec8 center\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 padding:\cf0 \strokec4  \cf7 \strokec7 8px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 gap:\cf0 \strokec4  \cf7 \strokec7 8px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 text-align:\cf0 \strokec4  \cf8 \strokec8 left\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 font-size:\cf0 \strokec4  \cf7 \strokec7 11px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 color:\cf0 \strokec4  \cf8 \strokec8 #252a3c\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .frame-parent\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 align-self:\cf0 \strokec4  \cf8 \strokec8 stretch\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 display:\cf0 \strokec4  \cf8 \strokec8 flex\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 align-items:\cf0 \strokec4  \cf8 \strokec8 center\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 justify-content:\cf0 \strokec4  \cf8 \strokec8 space-between\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 gap:\cf0 \strokec4  \cf7 \strokec7 20px\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf10 \cb3 \strokec10 /* ---- Logo placeholders (Snapp Bimeh + Saman Insurance) ---- */\cf0 \cb1 \strokec4 \
+\cf10 \cb3 \strokec10 /* Static, fixed-size boxes. No border/dashed outline anymore. */\cf0 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .logo-placeholder\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 width:\cf0 \strokec4  \cf7 \strokec7 64px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 height:\cf0 \strokec4  \cf7 \strokec7 46px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 position:\cf0 \strokec4  \cf8 \strokec8 relative\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 flex-shrink:\cf0 \strokec4  \cf7 \strokec7 0\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 border-radius:\cf0 \strokec4  \cf7 \strokec7 6px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 display:\cf0 \strokec4  \cf8 \strokec8 flex\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 align-items:\cf0 \strokec4  \cf8 \strokec8 center\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 justify-content:\cf0 \strokec4  \cf8 \strokec8 center\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 overflow:\cf0 \strokec4  \cf8 \strokec8 hidden\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .logo-placeholder\cf0 \strokec4  \cf5 \strokec5 img\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 width:\cf0 \strokec4  \cf7 \strokec7 100%\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 height:\cf0 \strokec4  \cf7 \strokec7 100%\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 object-fit:\cf0 \strokec4  \cf8 \strokec8 contain\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .saman-logo-placeholder\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 width:\cf0 \strokec4  \cf7 \strokec7 68px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 height:\cf0 \strokec4  \cf7 \strokec7 20px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 position:\cf0 \strokec4  \cf8 \strokec8 relative\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 flex-shrink:\cf0 \strokec4  \cf7 \strokec7 0\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 border-radius:\cf0 \strokec4  \cf7 \strokec7 4px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 display:\cf0 \strokec4  \cf8 \strokec8 flex\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 align-items:\cf0 \strokec4  \cf8 \strokec8 center\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 justify-content:\cf0 \strokec4  \cf8 \strokec8 center\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 overflow:\cf0 \strokec4  \cf8 \strokec8 hidden\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .saman-logo-placeholder\cf0 \strokec4  \cf5 \strokec5 img\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 width:\cf0 \strokec4  \cf7 \strokec7 100%\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 height:\cf0 \strokec4  \cf7 \strokec7 100%\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 object-fit:\cf0 \strokec4  \cf8 \strokec8 contain\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .parent\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 border-radius:\cf0 \strokec4  \cf7 \strokec7 8px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 background-color:\cf0 \strokec4  \cf8 \strokec8 #f6f8fc\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 display:\cf0 \strokec4  \cf8 \strokec8 flex\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 align-items:\cf0 \strokec4  \cf8 \strokec8 center\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 justify-content:\cf0 \strokec4  \cf8 \strokec8 flex-end\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 padding:\cf0 \strokec4  \cf7 \strokec7 4px\cf0 \strokec4  \cf7 \strokec7 8px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 gap:\cf0 \strokec4  \cf7 \strokec7 8px\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .div\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 position:\cf0 \strokec4  \cf8 \strokec8 relative\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 line-height:\cf0 \strokec4  \cf7 \strokec7 20px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 font-weight:\cf0 \strokec4  \cf7 \strokec7 500\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .b\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 position:\cf0 \strokec4  \cf8 \strokec8 relative\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 font-size:\cf0 \strokec4  \cf7 \strokec7 10px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 line-height:\cf0 \strokec4  \cf7 \strokec7 20px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 color:\cf0 \strokec4  \cf8 \strokec8 #004691\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 font-weight:\cf0 \strokec4  \cf7 \strokec7 700\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .div2\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 align-self:\cf0 \strokec4  \cf8 \strokec8 stretch\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 position:\cf0 \strokec4  \cf8 \strokec8 relative\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 font-size:\cf0 \strokec4  \cf7 \strokec7 10px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 line-height:\cf0 \strokec4  \cf7 \strokec7 20px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 font-weight:\cf0 \strokec4  \cf7 \strokec7 500\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 text-align:\cf0 \strokec4  \cf8 \strokec8 justify\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .insurer-data\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 align-self:\cf0 \strokec4  \cf8 \strokec8 stretch\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 border-radius:\cf0 \strokec4  \cf7 \strokec7 12px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 background-color:\cf0 \strokec4  \cf8 \strokec8 #d4dcf0\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 display:\cf0 \strokec4  \cf8 \strokec8 flex\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 flex-direction:\cf0 \strokec4  \cf8 \strokec8 column\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 align-items:\cf0 \strokec4  \cf8 \strokec8 flex-end\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 padding:\cf0 \strokec4  \cf7 \strokec7 8px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 gap:\cf0 \strokec4  \cf7 \strokec7 8px\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .b2\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 align-self:\cf0 \strokec4  \cf8 \strokec8 stretch\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 position:\cf0 \strokec4  \cf8 \strokec8 relative\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 line-height:\cf0 \strokec4  \cf7 \strokec7 20px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 font-weight:\cf0 \strokec4  \cf7 \strokec7 700\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .frame-group\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 align-self:\cf0 \strokec4  \cf8 \strokec8 stretch\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 display:\cf0 \strokec4  \cf8 \strokec8 flex\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 flex-direction:\cf0 \strokec4  \cf8 \strokec8 column\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 align-items:\cf0 \strokec4  \cf8 \strokec8 flex-end\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 gap:\cf0 \strokec4  \cf7 \strokec7 8px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 text-align:\cf0 \strokec4  \cf8 \strokec8 left\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 font-size:\cf0 \strokec4  \cf7 \strokec7 11px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 color:\cf0 \strokec4  \cf8 \strokec8 #252a3c\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .frame-container\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 align-self:\cf0 \strokec4  \cf8 \strokec8 stretch\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 display:\cf0 \strokec4  \cf8 \strokec8 flex\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 align-items:\cf0 \strokec4  \cf8 \strokec8 center\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 gap:\cf0 \strokec4  \cf7 \strokec7 8px\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .group\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 flex:\cf0 \strokec4  \cf7 \strokec7 1\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 border-radius:\cf0 \strokec4  \cf7 \strokec7 8px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 background-color:\cf0 \strokec4  \cf8 \strokec8 #f6f8fc\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 display:\cf0 \strokec4  \cf8 \strokec8 flex\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 align-items:\cf0 \strokec4  \cf8 \strokec8 center\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 justify-content:\cf0 \strokec4  \cf8 \strokec8 space-between\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 padding:\cf0 \strokec4  \cf7 \strokec7 2px\cf0 \strokec4  \cf7 \strokec7 8px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 gap:\cf0 \strokec4  \cf7 \strokec7 20px\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .frame-wrapper\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 align-self:\cf0 \strokec4  \cf8 \strokec8 stretch\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 display:\cf0 \strokec4  \cf8 \strokec8 flex\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 align-items:\cf0 \strokec4  \cf8 \strokec8 center\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .parent6\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 width:\cf0 \strokec4  \cf7 \strokec7 356px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 border-radius:\cf0 \strokec4  \cf7 \strokec7 8px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 background-color:\cf0 \strokec4  \cf8 \strokec8 #f6f8fc\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 display:\cf0 \strokec4  \cf8 \strokec8 flex\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 align-items:\cf0 \strokec4  \cf8 \strokec8 center\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 justify-content:\cf0 \strokec4  \cf8 \strokec8 space-between\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 padding:\cf0 \strokec4  \cf7 \strokec7 2px\cf0 \strokec4  \cf7 \strokec7 8px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 box-sizing:\cf0 \strokec4  \cf8 \strokec8 border-box\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 gap:\cf0 \strokec4  \cf7 \strokec7 20px\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .apple-parent\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 flex:\cf0 \strokec4  \cf7 \strokec7 1\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 border-radius:\cf0 \strokec4  \cf7 \strokec7 8px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 background-color:\cf0 \strokec4  \cf8 \strokec8 rgba(\cf7 \strokec7 255\cf0 \strokec4 , \cf7 \strokec7 255\cf0 \strokec4 , \cf7 \strokec7 255\cf0 \strokec4 , \cf7 \strokec7 0.8\cf8 \strokec8 )\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 display:\cf0 \strokec4  \cf8 \strokec8 flex\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 align-items:\cf0 \strokec4  \cf8 \strokec8 center\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 justify-content:\cf0 \strokec4  \cf8 \strokec8 space-between\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 padding:\cf0 \strokec4  \cf7 \strokec7 2px\cf0 \strokec4  \cf7 \strokec7 8px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 gap:\cf0 \strokec4  \cf7 \strokec7 20px\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .frame-parent7\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 align-self:\cf0 \strokec4  \cf8 \strokec8 stretch\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 display:\cf0 \strokec4  \cf8 \strokec8 flex\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 align-items:\cf0 \strokec4  \cf8 \strokec8 center\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 justify-content:\cf0 \strokec4  \cf8 \strokec8 flex-end\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 gap:\cf0 \strokec4  \cf7 \strokec7 8px\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .images-alt-1-inner\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 align-self:\cf0 \strokec4  \cf8 \strokec8 stretch\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 display:\cf0 \strokec4  \cf8 \strokec8 flex\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 flex-direction:\cf0 \strokec4  \cf8 \strokec8 column\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 align-items:\cf0 \strokec4  \cf8 \strokec8 flex-end\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 text-align:\cf0 \strokec4  \cf8 \strokec8 right\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 font-size:\cf0 \strokec4  \cf7 \strokec7 10px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 color:\cf0 \strokec4  \cf8 \strokec8 #004691\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf10 \cb3 \strokec10 /* ---- Device photo cards ---- */\cf0 \cb1 \strokec4 \
+\cf10 \cb3 \strokec10 /* Card hugs its content (no stretching) so it wraps tightly around\cf0 \cb1 \strokec4 \
+\cf10 \cb3 \strokec10    the photo \'97 this is what makes 1 or 2 photos look right instead\cf0 \cb1 \strokec4 \
+\cf10 \cb3 \strokec10    of stretching to fill the row. */\cf0 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .frame-parent10\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 flex:\cf0 \strokec4  \cf7 \strokec7 0\cf0 \strokec4  \cf7 \strokec7 0\cf0 \strokec4  \cf8 \strokec8 auto\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 border-radius:\cf0 \strokec4  \cf7 \strokec7 8px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 background-color:\cf0 \strokec4  \cf8 \strokec8 #f6f8fc\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 display:\cf0 \strokec4  \cf8 \strokec8 flex\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 flex-direction:\cf0 \strokec4  \cf8 \strokec8 column\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 align-items:\cf0 \strokec4  \cf8 \strokec8 flex-start\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 padding:\cf0 \strokec4  \cf7 \strokec7 2px\cf0 \strokec4  \cf7 \strokec7 8px\cf0 \strokec4  \cf7 \strokec7 8px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 gap:\cf0 \strokec4  \cf7 \strokec7 4px\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .wrapper\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 width:\cf0 \strokec4  \cf7 \strokec7 155.7px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 display:\cf0 \strokec4  \cf8 \strokec8 flex\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 align-items:\cf0 \strokec4  \cf8 \strokec8 center\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 justify-content:\cf0 \strokec4  \cf8 \strokec8 right\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .b20\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 position:\cf0 \strokec4  \cf8 \strokec8 relative\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 line-height:\cf0 \strokec4  \cf7 \strokec7 20px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 font-weight:\cf0 \strokec4  \cf7 \strokec7 700\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .photo-placeholder\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 align-self:\cf0 \strokec4  \cf8 \strokec8 stretch\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 height:\cf0 \strokec4  \cf7 \strokec7 188.4px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 width:\cf0 \strokec4  \cf7 \strokec7 155.7px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 position:\cf0 \strokec4  \cf8 \strokec8 relative\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 max-width:\cf0 \strokec4  \cf7 \strokec7 100%\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 overflow:\cf0 \strokec4  \cf8 \strokec8 hidden\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 flex-shrink:\cf0 \strokec4  \cf7 \strokec7 0\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 border-radius:\cf0 \strokec4  \cf7 \strokec7 6px\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 background-color:\cf0 \strokec4  \cf8 \strokec8 #eef2fa\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 display:\cf0 \strokec4  \cf8 \strokec8 flex\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 align-items:\cf0 \strokec4  \cf8 \strokec8 center\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 justify-content:\cf0 \strokec4  \cf8 \strokec8 center\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 box-sizing:\cf0 \strokec4  \cf8 \strokec8 border-box\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 .photo-placeholder\cf0 \strokec4  \cf5 \strokec5 img\cf0 \strokec4  \{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 width:\cf0 \strokec4  \cf7 \strokec7 100%\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 height:\cf0 \strokec4  \cf7 \strokec7 100%\cf0 \strokec4 ;\cb1 \
+\cb3   \cf6 \strokec6 object-fit:\cf0 \strokec4  \cf8 \strokec8 contain\cf0 \strokec4 ;\cb1 \
+\cb3 \}\cb1 \
+\
 }
