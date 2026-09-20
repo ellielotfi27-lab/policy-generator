@@ -2,8 +2,8 @@
   "serial_number": "۰۵۰۲۰۰۲۷۴۸۴۸۸۶",
   "description_text": "این بیمه‌نامه طبق پیشنهاد بیمه‌گزار و براساس قانون و مقررات بیمه در کشور و شرایط عمومی و خصوصی مندرج در متن قرارداد و پیوست آن و همچنین در ازای دریافت حق بیمه مقرر صادر گردید.",
   "logos": {
-    "snapp_bimeh_url": "https://example.com/logos/snapp-bimeh.png",
-    "saman_insurance_url": "https://example.com/logos/saman-insurance.png"
+    "snapp_bimeh_url": "https://github.com/ellielotfi27-lab/policy-generator/blob/main/assets/snappbimeh.png?raw=true",
+    "saman_insurance_url": "https://github.com/ellielotfi27-lab/policy-generator/blob/main/assets/saman.png?raw=true"
   },
   "policyholder": {
     "first_name": "حسن",
@@ -28,12 +28,16 @@
   },
   "images": [
     {
-      "label": "تصویر از پشت دستگاه",
-      "url": "https://example.com/photos/device-back.jpg"
+      "label": "تصویر IMEI",
+      "url": "https://github.com/ellielotfi27-lab/policy-generator/blob/main/assets/imei.jpeg?raw=true"
     },
     {
-      "label": "تصویر IMEI",
-      "url": "https://example.com/photos/device-imei.jpg"
+      "label": "تصویر از روی دستگاه",
+      "url": "https://github.com/ellielotfi27-lab/policy-generator/blob/main/assets/front.jpeg?raw=true"
+    },
+    {
+      "label": "تصویر از پشت دستگاه",
+      "url": "https://github.com/ellielotfi27-lab/policy-generator/blob/main/assets/back.jpeg?raw=true"
     }
   ]
 }
